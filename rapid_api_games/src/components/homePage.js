@@ -10,7 +10,7 @@ function Home()
         fetch("/api/games")
             .then(response => response.json())
             .then(data => setData(data))
-    }, [count])
+    }, [count]);
 
     console.log("this is data:")
     console.log(typeof(data));
@@ -24,19 +24,25 @@ function Home()
     }
 
 
-    const myElements = data.slice(0, 50).map((dataItems)=>{
+    const myElements = data.slice(0, 51).map((dataItems)=>{
         return (<GameComponent key={dataItems.id} item={dataItems}/>)
     })
 
     return (
-        <section className="dark:bg-black">
-            <h1 className="dark:text-white ">Welcome to Rapid Games</h1>
+        <section className="dark:bg-slate-500 pt-[10px]">
             <div>
+                <h1 className="dark:text-white text-center text-[23px]">Welcome to Rapid Games</h1>
+                <p className="text-center">Displaying Free Games to Play</p>
+            </div>
+            <div className="ml-[50px] flex flex-row justify-evenly w-[10%]">
                 <button onClick={handleCount}>Add</button>
                 <p>{count}</p>
             </div>
 
-            {myElements}
+            <div className="flex flex-row flex-wrap justify-between w-[1250px] px-[20px] mx-auto  ">
+
+                {myElements}
+            </div>
         </section>
     )
 }
