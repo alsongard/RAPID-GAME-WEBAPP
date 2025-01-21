@@ -1,7 +1,7 @@
 function Footer()
 {
     return (
-        <footer>
+        <footer className="dark:bg-slate-500">
             <h1 className="dark:text-white">RAPID GAMES API</h1>
         </footer>
     )
