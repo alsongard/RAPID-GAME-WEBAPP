@@ -3,7 +3,10 @@ import {BrowserRouter, Route, Routes} from "react-router-dom"
 import Home from "./homePage";
 import Footer from "./footer";
 import Header from "./header";
-import Testing from "./testingComp";
+// import Testing from "./testingComp";
+import GameInfo  from "./gameInfo";
+import Forms from "./forms";
+import GamesView from "./gamesView";
 
 function Page()
 {
@@ -16,7 +19,9 @@ function Page()
                 <Routes>
                     <Route path="/" element={<div> <Header darkMode={darkMode} setDarkMode={setDarkMode}/>  <Footer/></div>}>
                         <Route index element={<Home/>} />
-                        <Route path="test"  element={<Testing/>} />
+                        <Route path="gameInfo/:gameId" element={<GameInfo/>}/>
+                        <Route path="games" element={<GamesView/>}/>
+                        <Route path="forms" element={<Forms/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>
