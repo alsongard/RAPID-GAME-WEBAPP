@@ -3,7 +3,7 @@ function GameComponent(props)
 {
     return (
         <div className="dark:border-white my-[20px]">
-            <h2 className="dark:text-white"> Title: {props.item.title}</h2>
+            <h2 className="dark:text-black"> Title: {props.item.title}</h2>
             <Link to={`/gameInfo/${props.item.id}` }><img className="rounded" src={props.item.thumbnail} alt="game"/></Link> 
         </div>
     )

@@ -42,19 +42,22 @@ function GamesView()
         : null;
 
     return(
-        <div className="dark:bg-slate-500 h-[80vh]">
+        <div className="dark:bg-slate-500 ">
             <h1 className="text-center pt-[50px]  dark:text-black"> RAPID GAMES</h1>
-            <p className='mt-[20px] w-[1200px] mx-auto '>To view games for specific device fill in the form</p>
 
-            <form className="border-2 border-black w-[80%] mx-auto block p-[30px] rounded-sm my-[20px] text-white" onSubmit={handleSubmit}>
-                <label>Select platform or device : </label>
-                <select className="block dark:bg-slate-500 border-2 border-white dark:text-black border-none py-[1.5px]  px-2" onChange={handleChange}  name="gamePlatform">
+            <form className="border-2 rounded-[20px] border-black w-[80%] mx-auto block p-[30px]  my-[20px] " onSubmit={handleSubmit}>
+                <p className='mt-[20px] w-[1200px] mx-auto '>To view games for specific device fill in the form</p>
+                <label className="text-black">Select platform or device : </label>
+                <select className="block mt-[15px] rounded dark:bg-slate-500 border-2 text-black dark:text-black border-none py-[1.5px]  px-2" onChange={handleChange}  name="gamePlatform">
                     <option  value="pc" >PC (Windows)</option>
                     <option value="browser" >Web Browser</option>
                 </select>
-                <input className=" dark:text-black" type="submit" value="submit"/>
+                <input className=" mt-[15px] uppercase hover:bg-green-500 text-black" type="submit" value="submit"/>
             </form>
-            {gamedata.length > 0 && myElements}
+
+            <div className="flex flex-row flex-wrap justify-between w-[1250px] px-[20px] mx-auto  ">
+                {gamedata.length > 0 && myElements}
+            </div>
 
         </div>
     )
