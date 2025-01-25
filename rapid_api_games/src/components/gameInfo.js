@@ -29,7 +29,7 @@ function GameInfo()
 
     return (
         
-        <div className="dark:border-white border-2 my-[20px]">
+        <div className="dark:bg-slate-500 border-2 my-[20px]">
             <h2 className="dark:text-white"> Title: {data.title} </h2>
             <img src={data.thumbnail} alt="game"/>
             <p>Platform: {data.platform}</p>
