@@ -23,6 +23,14 @@ function Home()
     // }
 
 
+    if (!data)
+    {
+        return (
+            <div>
+                <h1>Loading...</h1>
+            </div>
+        )
+    }
     const myElements = data.slice(0, 51).map((dataItems)=>{
         return (<GameComponent key={dataItems.id} item={dataItems}/>)
     })
