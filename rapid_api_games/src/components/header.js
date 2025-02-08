@@ -9,7 +9,6 @@ function Header({darkMode, setDarkMode})
     };
     return(
         <div>
-
             <header className="dark:bg-slate-500 py-[10px] justify-between flex flex-row pl-[30px] px-[50px] bg-gradient-to-tr from-[rgba(125,212,201,0.69)] to-[#323232]">
                 <nav  className="flex flex-row w-[20%]  justify-evenly list-none">
                     <NavLink
