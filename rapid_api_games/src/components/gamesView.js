@@ -5,8 +5,10 @@ function GamesView()
 
     // state variable for getting form data
     const [gamePlatform, setFormData] = React.useState("pc");
+
     // state variable for controlling when useEffect is run
     const [isSubmitted, setIsSubmitted] = React.useState(false);
+    
     // state variable for storing platform gamedata
     const [gamedata, setGameData] = React.useState([]);
 
@@ -27,14 +29,16 @@ function GamesView()
 
     // fetch data according to platform
     React.useEffect(()=>{
-        fetch(`api/games?platform=${gamePlatform}`)
+        fetch("api/games?platform="+gamePlatform)
             .then(response => response.json())
             .catch(error => console.log(`Error while fetching data: ${error}`))
             .then(data => setGameData(data))
             .finally(()=> setIsSubmitted(false))
-    },[isSubmitted]);
+    },[gamePlatform, isSubmitted]);
 
     console.log(gamedata.length)
+
+    // if expressions
     const myElements = Array.isArray(gamedata)
         ? gamedata.map((dataItems) => (
             <GameComponent key={dataItems.id} item={dataItems}/>
