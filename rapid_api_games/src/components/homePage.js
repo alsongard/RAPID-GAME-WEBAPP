@@ -6,8 +6,9 @@ function Home()
     const [data, setData] = React.useState([])
 
     React.useEffect(()=>{
-        fetch("/api/games")
+        fetch("http://localhost:5000/api/games")
             .then(response => response.json())
+            // .then(data => console.log(data))
             .then(data => setData(data))
     }, []);
 
@@ -38,12 +39,9 @@ function Home()
     return (
         <section className="dark:bg-slate-500 pt-[10px]">
             <div>
-                <h1 className="dark:text-white text-center text-[23px]">Welcome to Rapid Games</h1>
+                <h1 className="dark:text-white text-center text-[23px]">Welcome to Free Games API</h1>
             </div>
-            <div className="ml-[50px] flex flex-row justify-evenly w-[10%]">
-            </div>
-
-            <div className="flex flex-row flex-wrap justify-between w-[1250px] px-[20px] mx-auto  ">
+            <div className="flex flex-row flex-wrap justify-center max-w-[1250px] px-[20px] mx-auto gap-x-[20px] ">
 
                 {myElements}
             </div>

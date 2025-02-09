@@ -29,7 +29,7 @@ function GamesView()
 
     // fetch data according to platform
     React.useEffect(()=>{
-        fetch("api/games?platform="+gamePlatform)
+        fetch("http://localhost:5000/api/games")
             .then(response => response.json())
             .catch(error => console.log(`Error while fetching data: ${error}`))
             .then(data => setGameData(data))
@@ -59,7 +59,7 @@ function GamesView()
                 <input className="text-[13px] rounded mt-[15px] px-[2.5px] bg-[rgba(142,158,82,0.8)] uppercase hover:bg-green-500 text-black" type="submit" value="submit"/>
             </form>
             <h2 className="text-center dark:text-white">By default the page displays pc games</h2>
-            <div className="flex flex-row flex-wrap justify-between w-[1250px] px-[20px] mx-auto  ">
+            <div className="flex flex-row flex-wrap justify-center gap-x-[25px] max-w-[1250px] px-[20px] mx-auto  ">
                 {gamedata.length > 0 && myElements}
             </div>
 
