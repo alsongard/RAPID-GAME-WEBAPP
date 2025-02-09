@@ -22,8 +22,8 @@ Free Games Hub is a React-based website that fetches data from the [RapidAPI Fre
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/free-games-hub.git
-   cd free-games-hub
+   git clone https://github.com/alsongard/RAPID-GAME-WEBAPP.git
+   cd rapid_api_games
    ```
 
 2. Install dependencies:
@@ -31,12 +31,7 @@ Free Games Hub is a React-based website that fetches data from the [RapidAPI Fre
    npm install
    ```
 
-3. Create a `.env` file in the root directory and add your RapidAPI key:
-   ```env
-   REACT_APP_RAPIDAPI_KEY=your_api_key_here
-   ```
-
-4. Start the development server:
+3. Start the development server:
    ```bash
    npm start
    ```
@@ -45,36 +40,14 @@ Free Games Hub is a React-based website that fetches data from the [RapidAPI Fre
 
 To fetch games, the application makes a request to the RapidAPI Free Games API:
 ```javascript
-fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_KEY,
-        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-    }
+""
+fetch('https://www.freetogame.com/api/games', {
 })
 .then(response => response.json())
 .then(data => setGames(data))
 .catch(error => console.error(error));
 ```
 
-## 🕹️ Filtering Games by Platform
-
-The **GAMES** page includes a filter to display games for either **PC** or **Web Browser**:
-```javascript
-const filteredGames = games.filter(game => game.platform.includes(selectedPlatform));
-```
-
-## 🎨 Dark Mode Feature
-
-Dark mode is implemented using **useState** and **localStorage**:
-```javascript
-const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') === 'true');
-
-useEffect(() => {
-    localStorage.setItem('darkMode', darkMode);
-    document.body.classList.toggle('dark', darkMode);
-}, [darkMode]);
-```
 
 ## 🛠️ Available Scripts
 
