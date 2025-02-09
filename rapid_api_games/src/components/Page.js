@@ -5,7 +5,7 @@ import Footer from "./footer";
 import Header from "./header";
 // import Testing from "./testingComp";
 import GameInfo  from "./gameInfo";
-import Forms from "./forms";
+// import Forms from "./forms";
 import GamesView from "./gamesView";
 
 function Page()
@@ -21,7 +21,6 @@ function Page()
                         <Route index element={<Home/>} />
                         <Route path="gameInfo/:gameId" element={<GameInfo/>}/>
                         <Route path="games" element={<GamesView/>}/>
-                        <Route path="forms" element={<Forms/>}/>
                     </Route>
                 </Routes>
             </BrowserRouter>
