@@ -4,7 +4,7 @@ function GamesView()
 {
 
     // state variable for getting form data
-    const [gamePlatform, setFormData] = React.useState("");
+    const [gamePlatform, setFormData] = React.useState("pc");
     // state variable for controlling when useEffect is run
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     // state variable for storing platform gamedata
@@ -54,7 +54,7 @@ function GamesView()
                 </select>
                 <input className="text-[13px] rounded mt-[15px] px-[2.5px] bg-[rgba(142,158,82,0.8)] uppercase hover:bg-green-500 text-black" type="submit" value="submit"/>
             </form>
-
+            <h2 className="text-center dark:text-white">By default the page displays pc games</h2>
             <div className="flex flex-row flex-wrap justify-between w-[1250px] px-[20px] mx-auto  ">
                 {gamedata.length > 0 && myElements}
             </div>
