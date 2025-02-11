@@ -29,7 +29,7 @@ function GamesView()
 
     // fetch data according to platform
     React.useEffect(()=>{
-        fetch("http://localhost:5000/api/games")
+        fetch(`/api/games?=platform=${gamePlatform}`)
             .then(response => response.json())
             .catch(error => console.log(`Error while fetching data: ${error}`))
             .then(data => setGameData(data))
